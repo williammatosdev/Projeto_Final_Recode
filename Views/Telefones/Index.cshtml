@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CadastroElogin.Models.Telefone>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Cadastro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Celeluar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celeluar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.Email)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_tel">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_tel">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_tel">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

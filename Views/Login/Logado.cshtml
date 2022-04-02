@@ -1,0 +1,22 @@
+﻿@{	
+	ViewData["Title"] = "Perfil";
+}
+@if (TempData["Id_usuario"] != null)
+{
+	<h4>Olá, @TempData["Nome"]</h4>
+}
+<div class="list-group">
+	<button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+		Minha conta
+	</button>
+	
+	@if (TempData["Celular"] != null)
+	{
+		<a class="nav-link text-dark" asp-route-id="@TempData["Id_tel"]" asp-controller="Telefones" asp-action="Details">Perfil</a>
+	}
+	else
+	{
+		<a class="nav-link text-dark" asp-route-id="@TempData["Id_usuario"]" asp-controller="Usuarios" asp-action="Details">Perfil</a>
+	}
+	<a class="nav-link text-dark" asp-route-id="@TempData["Id_usuario"]" asp-controller="Telefones" asp-action="Create">Cadastrar telefone</a>
+</div>

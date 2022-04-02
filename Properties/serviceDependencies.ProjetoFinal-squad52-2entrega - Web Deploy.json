@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/tcc-recode-squad52/databases/ProjetoSquad52",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
